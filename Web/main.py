@@ -14,9 +14,17 @@ def add_todo():
 interface.title("My simple Todo App")
 interface.subheader("To do:")
 
-for todo in todoes:
-    interface.checkbox(todo)
+#show list of todoes and complete
+for index, todo in enumerate(todoes):
+    checking = interface.checkbox(todo, key=todo)
+    if checking:
+        todoes.pop(index)
+        work_with_files.change_to_does_in_file(todoes)
+        del interface.session_state[todo]
+        interface.experimental_rerun()
 
-interface.text_input(label="", placeholder="Write new todo",
+#field for adding new elments
+interface.text_input(label="",
+                     placeholder="Write new todo and press Enter",
                      on_change=add_todo, key='new_todo')
 
