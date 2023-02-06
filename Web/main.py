@@ -2,7 +2,7 @@ import streamlit as interface
 import work_with_files
 
 todoes = work_with_files.read_to_does_from_file()
-
+interface.set_page_config(layout='wide')
 # add new to do in list
 def add_todo():
     todo = interface.session_state['new_todo'] +"\n"
