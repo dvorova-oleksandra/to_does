@@ -5,6 +5,7 @@ I realized 3 version of to do. In apps you can add to does, conplete them and se
 
 ## 💻What is stack technology💻
 Python and modules of this language
+
 Modeles: 
 * time(for all versions)
 * os(for all versions)
